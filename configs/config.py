@@ -5,6 +5,7 @@ import os
 with open (os.path.join(os.getcwd(), 'configs', 'creds_and_tokens.json')) as f:
     credentials = json.load(f)
 
+
 # telegram token
 TOKEN = credentials.get('telegram_token')
 
@@ -13,7 +14,9 @@ with open(os.path.join(os.getcwd(), 'spam_defender_files', 'banned_list.json')) 
     banned_list = json.load(f)
 
 banned_message = f'Sorry, but you\'ve been banned for spamming'
-welcome_message = 'Hello! Send me a PMID or DOI like this:\n\n22012259\n10.1007/s10741-019-09825-x'
+welcome_message = 'Hello! I\'m a FDA (Food and Drug Administration) searching bot: send me the drug name like this:\n@<bot_username> phesgo'
+drug_not_found = 'Entered drug was not found; make sure to use inline search (@<bot_user_name>) to get available data'
+multiple_applno_matches = 'Following FDA applications matched your search: in other words, here is a list of all applNos with your drug, choose one :)\n\n'
 
 # Errors and developers
 error_for_developer = 'An error occurred for this user, plz take a look at bot logs and tracebacks'
